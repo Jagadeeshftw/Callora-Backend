@@ -167,3 +167,10 @@ async function startServer() {
 }
 
 startServer();
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Callora backend listening on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
